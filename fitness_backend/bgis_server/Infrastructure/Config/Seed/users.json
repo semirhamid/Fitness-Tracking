@@ -1,0 +1,52 @@
+[
+    {
+        "firstName": "Mike",
+        "middleName": "Admin",
+        "lastName": "Mike",
+        "registeredDate": "",
+        "birthDate": "1994-02-01",
+        "userName": "admin",
+        "email": "admin@gmail.com",
+        "Phone": "0911223344",
+        "roles": "admin",
+        "Password": "Admin123#"
+      },
+
+      {
+        "firstName": "Abel",
+        "middleName": "Parent",
+        "lastName": "Abel",
+        "registeredDate": "",
+        "birthDate": "1994-02-01",
+        "userName": "parent",
+        "email": "parent@gmail.com",
+        "Phone": "0922334455",
+        "roles": "parent",
+        "Password": "Parent123#"
+      },
+
+      {
+        "firstName": "Aman",
+        "middleName": "Student",
+        "lastName": "Aman",
+        "registeredDate": "",
+        "birthDate": "1994-02-01",
+        "userName": "student",
+        "email": "student@gmail.com",
+        "Phone": "0933445566",
+        "roles": "student",
+        "Password": "Student123#"
+      },
+      {
+        "firstName": "Ruth",
+        "middleName": "Teacher",
+        "lastName": "Ruth",
+        "registeredDate": "",
+        "birthDate": "1994-02-01",
+        "userName": "teacher",
+        "email": "teacher@gmail.com",
+        "Phone": "0944556677",
+        "roles": "teacher",
+        "Password": "Teacher123#"
+      }
+]
