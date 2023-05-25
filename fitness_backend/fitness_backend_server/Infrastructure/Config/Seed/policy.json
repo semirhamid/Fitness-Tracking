@@ -1,0 +1,6 @@
+[
+    {
+        "PolicyName": "ManageAdminPolicy",
+        "Claim": "ManageAdmin"
+    }
+]
