@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using fitness_backend_bl.Infrastructure.Db;
@@ -11,9 +12,10 @@ using fitness_backend_bl.Infrastructure.Db;
 namespace fitness_backend_server.Infrastructure.Migrations.Auth
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528060115_AddedUserPlanDietUserSleepUserWorkoutTable")]
+    partial class AddedUserPlanDietUserSleepUserWorkoutTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -239,94 +241,6 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.ToTable("PlanWorkouts");
                 });
 
-            modelBuilder.Entity("fitness_backend.UserDiet", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("Achieved")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("Day")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("DietId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PlanTypeId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PlanTypeId");
-
-                    b.ToTable("UserDiets");
-                });
-
-            modelBuilder.Entity("fitness_backend.UserPlan", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("SelectedPlanTypeId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("StartingDate")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("UserPlans");
-                });
-
-            modelBuilder.Entity("fitness_backend.UserSleep", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<int>("Day")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("PlanTypeId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("SleepDuration")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("userId")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PlanTypeId");
-
-                    b.ToTable("UserSleeps");
-                });
-
             modelBuilder.Entity("fitness_backend.UserWorkout", b =>
                 {
                     b.Property<int>("Id")
@@ -350,9 +264,8 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.Property<int?>("Step")
                         .HasColumnType("integer");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("WorkoutId")
                         .HasColumnType("integer");
@@ -582,28 +495,6 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.Navigation("PlanType");
 
                     b.Navigation("Workout");
-                });
-
-            modelBuilder.Entity("fitness_backend.UserDiet", b =>
-                {
-                    b.HasOne("fitness_backend.PlanType", "PlanType")
-                        .WithMany()
-                        .HasForeignKey("PlanTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PlanType");
-                });
-
-            modelBuilder.Entity("fitness_backend.UserSleep", b =>
-                {
-                    b.HasOne("fitness_backend.PlanType", "PlanType")
-                        .WithMany()
-                        .HasForeignKey("PlanTypeId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("PlanType");
                 });
 
             modelBuilder.Entity("fitness_backend.UserWorkout", b =>

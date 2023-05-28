@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using fitness_backend_bl.Infrastructure.Db;
@@ -11,9 +12,10 @@ using fitness_backend_bl.Infrastructure.Db;
 namespace fitness_backend_server.Infrastructure.Migrations.Auth
 {
     [DbContext(typeof(AuthDbContext))]
-    partial class AuthDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230528064732_AddedUserDietUserSleep")]
+    partial class AddedUserDietUserSleep
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -262,9 +264,8 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.Property<int>("PlanTypeId")
                         .HasColumnType("integer");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -287,9 +288,8 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.Property<DateTime>("StartingDate")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("Id");
 
@@ -315,10 +315,6 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
 
                     b.Property<int>("SleepDuration")
                         .HasColumnType("integer");
-
-                    b.Property<string>("userId")
-                        .IsRequired()
-                        .HasColumnType("text");
 
                     b.HasKey("Id");
 
@@ -350,9 +346,8 @@ namespace fitness_backend_server.Infrastructure.Migrations.Auth
                     b.Property<int?>("Step")
                         .HasColumnType("integer");
 
-                    b.Property<string>("UserId")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.Property<int>("WorkoutId")
                         .HasColumnType("integer");
