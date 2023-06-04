@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:liquid_swipe/liquid_swipe.dart';
 
-import '../constant/intro_screen_data.dart';
+import '../intro_screen_data.dart';
+
+
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});

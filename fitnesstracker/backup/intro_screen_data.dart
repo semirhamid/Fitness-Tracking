@@ -1,4 +1,5 @@
-import 'package:fitnesstracker/models/intro_screen_model.dart';
+
+import 'models/intro_screen_model.dart';
 
 List<IntroScreenItemData> introScreenData = [
   const IntroScreenItemData(
