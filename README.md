@@ -30,11 +30,3 @@ Users can register and sign up for the app using their email address or social m
 The Fitness Tracker App is a comprehensive tool for anyone looking to improve their health and fitness. With features such as activity tracking, diet tracking, sleep tracking, personalized coaching, exercise sets, and diet plans, the app can help users make informed decisions about their lifestyle habits and achieve their fitness goals.
 
 
-#GRoup members
-| No | Name | ID |Section|
-| ------ | ------ | ------ |------ |
-|1| Semir Hamid | UGR/9690/13| 1|
-|2 |Hayat Shifa | UGR/9771/13| 1|
-|3| Bilen Mehalek | UGR/0252/13| 1|
-|4| Addisu Abitew | UGR/7259/13| 3|
-|5| Selam Yemiru | UGR/4870/13| 3|
